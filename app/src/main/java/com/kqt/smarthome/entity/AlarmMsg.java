@@ -7,7 +7,6 @@ public class AlarmMsg {
 	private String mac;
 	private String msg;
 	private String filepath;
-
 	public String getFilepath() {
 		return filepath;
 	}

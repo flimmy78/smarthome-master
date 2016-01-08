@@ -1,6 +1,5 @@
 package com.kqt.smarthome.activity;
 
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
@@ -73,7 +72,7 @@ public class SettingBoxShareActivity extends BaseActivity {
 
 	public void creatBitmap(String code) {
 		try {
-			Bitmap bitmap = EncodingHandler.createQRCode(code, 350);
+			Bitmap bitmap = EncodingHandler.createQRCode(code, 250);
 			box_sharp_code_img.setImageBitmap(bitmap);
 		} catch (WriterException e) {
 			// TODO Auto-generated catch block

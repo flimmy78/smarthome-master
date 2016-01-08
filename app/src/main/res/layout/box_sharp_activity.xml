@@ -21,15 +21,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="请将下面二维码分享给你的朋友"
                 android:textSize="18sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="注:该二维码有效期为一小时"
-                android:textColor="@color/red"
+                android:textColor="@color/red" android:text="请将下面二维码分享给你的朋友"
                 android:textSize="16sp" />
 
             <LinearLayout
@@ -66,7 +64,7 @@
             android:layout_marginTop="10dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:text="原因:只有管理员才能分享账号或者你可点击刷新按钮重试"
+            android:text=""
             android:textSize="15sp" />
     </LinearLayout>
 

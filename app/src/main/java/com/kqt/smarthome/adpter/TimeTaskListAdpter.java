@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.accloud.cloudservice.AC;
@@ -68,9 +69,9 @@ public class TimeTaskListAdpter extends BaseAdapter {
                     .findViewById(R.id.time_task_period);
             viewholder.time_task_content = (TextView) convertView
                     .findViewById(R.id.time_task_content);
-            viewholder.edit= (TextView) convertView.findViewById(R.id.edit_img);
-
+            viewholder.edit = (LinearLayout) convertView.findViewById(R.id.edit_img);
             convertView.setTag(viewholder);
+
         } else
             viewholder = (Viewholder) convertView.getTag();
 
@@ -88,7 +89,7 @@ public class TimeTaskListAdpter extends BaseAdapter {
         viewholder.time_task_content.setText(content);
         viewholder.time_task_do.setText(stuts > 1 ? "执行中" : "停止");
 
-        convertView.setOnClickListener(new View.OnClickListener() {
+        viewholder.edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TimeTaskDialog dialog = new TimeTaskDialog(context);
@@ -156,7 +157,8 @@ public class TimeTaskListAdpter extends BaseAdapter {
     }
 
     class Viewholder {
-        TextView time_task_adminname, edit,time_task_do, time_task_mode_time, time_task_dotime, time_task_period, time_task_content;
+        TextView time_task_adminname, time_task_do, time_task_mode_time, time_task_dotime, time_task_period, time_task_content;
+        LinearLayout edit;
     }
 
 

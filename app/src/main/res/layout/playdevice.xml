@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@color/gray"
-    android:orientation="vertical" >
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="@color/gray"
+              android:orientation="vertical">
 
     <FrameLayout
         android:id="@+id/suface_framlt"
         android:layout_width="match_parent"
-        android:layout_height="250dp" >
+        android:layout_height="250dp">
 
         <android.opengl.GLSurfaceView
             android:id="@+id/glsurfaceview1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:longClickable="true" />
+            android:longClickable="true"/>
         <!-- 提示栏 -->
 
         <LinearLayout
@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <ProgressBar
                 style="?android:attr/progressBarStyleLarge"
@@ -30,14 +30,14 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:indeterminate="true"
-                android:indeterminateOnly="true" />
+                android:indeterminateOnly="true"/>
 
             <TextView
                 android:id="@+id/connecting_show1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="加载数据..." />
+                android:text="加载数据..."/>
         </LinearLayout>
 
         <TextView
@@ -49,7 +49,7 @@
             android:layout_marginTop="3dp"
             android:text="正在录像..."
             android:textColor="@color/red"
-            android:textSize="17sp" />
+            android:textSize="17sp"/>
 
         <ImageView
             android:id="@+id/full_img"
@@ -58,20 +58,20 @@
             android:layout_gravity="right|bottom"
             android:layout_marginBottom="5dp"
             android:layout_marginRight="5dp"
-            android:src="@drawable/full_screen" />
+            android:src="@drawable/full_screen"/>
     </FrameLayout>
 
     <LinearLayout
         android:id="@+id/down_lt"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="40dp"
             android:background="#f19149"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
         </LinearLayout>
 
         <LinearLayout
@@ -81,7 +81,7 @@
             android:gravity="center"
             android:orientation="horizontal"
             android:paddingLeft="5dp"
-            android:paddingRight="5dp" >
+            android:paddingRight="5dp">
 
             <LinearLayout
                 android:id="@+id/audio_layout"
@@ -89,19 +89,19 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/shexiangtou"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:background="@drawable/vidio_touch_selector" />
+                    android:background="@drawable/vidio_touch_selector"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="录像"
-                    android:textColor="@color/back" />
+                    android:textColor="@color/back"/>
             </LinearLayout>
 
             <LinearLayout
@@ -109,18 +109,18 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:background="@drawable/talk_touch_selector" />
+                    android:background="@drawable/talk_touch_selector"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="对讲"
-                    android:textColor="@color/back" />
+                    android:textColor="@color/back"/>
             </LinearLayout>
 
             <LinearLayout
@@ -128,18 +128,18 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:background="@drawable/linster_touch_selector" />
+                    android:background="@drawable/linster_touch_selector"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="监听"
-                    android:textColor="@color/back" />
+                    android:textColor="@color/back"/>
             </LinearLayout>
 
             <LinearLayout
@@ -148,18 +148,18 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:background="@drawable/pic_touch_selector" />
+                    android:background="@drawable/pic_touch_selector"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="清晰度"
-                    android:textColor="@color/back" />
+                    android:textColor="@color/back"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -170,7 +170,7 @@
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingLeft="5dp"
-            android:paddingRight="5dp" >
+            android:paddingRight="5dp">
 
             <LinearLayout
                 android:id="@+id/capture_img"
@@ -178,18 +178,18 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:background="@drawable/hd_touch_selector" />
+                    android:background="@drawable/hd_touch_selector"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="抓图"
-                    android:textColor="@color/back" />
+                    android:textColor="@color/back"/>
             </LinearLayout>
 
             <LinearLayout
@@ -198,18 +198,18 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:background="@drawable/infred_touch_selector" />
+                    android:background="@drawable/infred_touch_selector"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="红外灯"
-                    android:textColor="@color/back" />
+                    android:textColor="@color/back"/>
             </LinearLayout>
 
             <LinearLayout
@@ -218,18 +218,18 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:background="@drawable/lumi_touch_selector" />
+                    android:background="@drawable/lumi_touch_selector"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="亮度"
-                    android:textColor="@color/back" />
+                    android:textColor="@color/back"/>
             </LinearLayout>
 
             <LinearLayout
@@ -238,58 +238,57 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:background="@drawable/contrst_touch_selector" />
+                    android:background="@drawable/contrst_touch_selector"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="对比度"
-                    android:textColor="@color/back" />
+                    android:textColor="@color/back"/>
             </LinearLayout>
         </LinearLayout>
-      
 
-        
-          <!-- //////////wille project/////////////// -->
-          
-           <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:visibility="visible">
-        android:orientation="horizontal" >  
-                       <Button
-            android:id="@+id/Control_left"
-            android:layout_width="match_parent"
+
+        <!-- //////////wille project/////////////// -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:text="左"
+            android:layout_gravity="bottom"
+            android:visibility="visible">
+            android:orientation="horizontal" >
 
-            />
-                               
-                       <Button
-            android:id="@+id/Control_right"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:text="右"
+            <Button
+                android:id="@+id/Control_left"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="左"
+                android:visibility="gone"
 
-            />
-            
-                    </LinearLayout>
-          
-          
-          
-          
-           <!-- //////////wille project/////////////// -->
-        
-        
-        
+                />
+
+            <Button
+                android:id="@+id/Control_right"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="右"
+                android:visibility="gone"
+
+                />
+
+        </LinearLayout>
+
+
+        <!-- //////////wille project/////////////// -->
+
+
     </LinearLayout>
 
 </LinearLayout>

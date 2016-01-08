@@ -131,7 +131,7 @@ public class DeviceLayerFragment extends LazyFragment implements
             @Override
             public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
                                            int arg2, long arg3) { // 长按删除
-                if ((arg2 - 1) == 0) {
+                if (arg2== 0) {
                     return true;
                 }
                 final int index = arg2 - 1;

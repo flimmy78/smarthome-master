@@ -1,8 +1,5 @@
 package com.kqt.smarthome.adpter;
 
-import java.util.HashMap;
-import java.util.List;
-
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -14,14 +11,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.kqt.smarthome.R;
-import com.kqt.smarthome.activity.SettingIpcAlarmActivity;
 import com.kqt.smarthome.activity.SettingIpcAPActivity;
+import com.kqt.smarthome.activity.SettingIpcAlarmActivity;
 import com.kqt.smarthome.activity.SettingIpcFTPActivity;
 import com.kqt.smarthome.activity.SettingIpcNameActivity;
+import com.kqt.smarthome.activity.SettingIpcSharpActivity;
 import com.kqt.smarthome.activity.SettingIpcTimeActivity;
 import com.kqt.smarthome.activity.SettingIpcUserActivity;
 import com.kqt.smarthome.activity.SettingIpcWiFiActivity;
+import com.kqt.smarthome.activity.SettingOverturnActivity;
 import com.kqt.smarthome.entity.IpcDevice;
+
+import java.util.HashMap;
+import java.util.List;
 
 
 public class IpcSettingAdpter extends BaseAdapter {
@@ -119,6 +121,16 @@ public class IpcSettingAdpter extends BaseAdapter {
 					break;
 				case 6: // WIFI设置
 					intent = new Intent(context, SettingIpcWiFiActivity.class);
+					intent.putExtra("device", device);
+					context.startActivity(intent);
+					break;
+				case 7: // 图像翻转
+					intent = new Intent(context, SettingOverturnActivity.class);
+					intent.putExtra("device", device);
+					context.startActivity(intent);
+					break;
+				case 8: // 图像翻转
+					intent = new Intent(context, SettingIpcSharpActivity.class);
 					intent.putExtra("device", device);
 					context.startActivity(intent);
 					break;

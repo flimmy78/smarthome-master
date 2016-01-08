@@ -16,9 +16,10 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.kqt.smarthome.R;
+import com.kqt.smarthome.db.DeviceManager;
 import com.kqt.smarthome.entity.AlarmMsg;
+import com.kqt.smarthome.entity.IpcDevice;
 import com.kqt.smarthome.util.Config;
-import com.kqt.smarthome.util.Util;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -74,8 +75,7 @@ public class AlarmMsgAdpter extends BaseAdapter {
 
         final AlarmMsg manager = list.get(position);
         final String path = manager.getFilepath();
-
-        if (manager.getMsg().equals(Config.CUP_IMGTYPE)) {
+        if (manager.getMsg().equals(Config.CUP_IMGTYPE)||manager.getMsg().contains("警报")) {
             Bitmap bitmap = null;
             try {
                 bitmap = BitmapFactory.decodeStream(new FileInputStream(path));
@@ -89,14 +89,9 @@ public class AlarmMsgAdpter extends BaseAdapter {
             }
         } else if (manager.getMsg().equals(Config.VIDE_TYPE)) {
             viewholder.file.setBackgroundResource(R.drawable.index_default);
-        } else if (manager.getMsg().contains("警报")) {
-            @SuppressWarnings("deprecation")
-            Drawable drawable = new BitmapDrawable(Util.decodeBitmap(manager
-                    .getFilepath()));
-            viewholder.file.setBackgroundDrawable(drawable);
         }
 
-        viewholder.dname.setText(manager.getMac());
+        viewholder.dname.setText(getname(manager.getMac()));
         viewholder.time.setText(manager.getTime());
         viewholder.msg.setText(manager.getMsg());
 
@@ -104,7 +99,7 @@ public class AlarmMsgAdpter extends BaseAdapter {
 
             @Override
             public void onClick(View v) {
-                if (manager.getMsg().equals(Config.CUP_IMGTYPE)) {
+                if (manager.getMsg().equals(Config.CUP_IMGTYPE)||manager.getMsg().contains("警报")) {
                     openFile(path, 1);
                 } else if (manager.getMsg().equals(Config.VIDE_TYPE)) {
                     openFile(path, 2);
@@ -113,6 +108,13 @@ public class AlarmMsgAdpter extends BaseAdapter {
         });
 
         return convertView;
+
+    }
+
+    private String getname(String mac) {
+        IpcDevice device = DeviceManager.getInstence(context).Query_DeviceID_Device(mac);
+        String name = device.getName();
+        return name;
 
     }
 

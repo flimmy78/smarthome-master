@@ -1,13 +1,5 @@
 package com.kqt.smarthome.activity;
 
-import hsl.p2pipcam.nativecaller.DeviceSDK;
-
-import java.util.Timer;
-import java.util.TimerTask;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.graphics.drawable.ColorDrawable;
@@ -29,14 +21,11 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
-import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
 import com.kqt.smarthome.R;
-import com.kqt.smarthome.db.DeviceManager;
-import com.kqt.smarthome.entity.AlarmMsg;
 import com.kqt.smarthome.entity.IpcDevice;
 import com.kqt.smarthome.listenner.GraphicListener;
 import com.kqt.smarthome.listenner.PlayListener;
@@ -47,10 +36,14 @@ import com.kqt.smarthome.util.CustomAudioRecorder.AudioRecordResult;
 import com.kqt.smarthome.util.CustomBuffer;
 import com.kqt.smarthome.util.CustomBufferData;
 import com.kqt.smarthome.util.CustomBufferHead;
-import com.kqt.smarthome.util.FileHelper;
 import com.kqt.smarthome.util.MyRender;
-import com.kqt.smarthome.util.Util;
 import com.kqt.smarthome.util.MyRender.RenderListener;
+import com.kqt.smarthome.util.Util;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import hsl.p2pipcam.nativecaller.DeviceSDK;
 
 public class PlayDeviceActivity extends BaseActivity implements PlayListener,
 		RenderListener, AudioRecordResult, OnClickListener, GraphicListener {
@@ -136,10 +129,8 @@ public class PlayDeviceActivity extends BaseActivity implements PlayListener,
 	}
 
 	private void initView() {
-
 		glSurfaceView1 = (GLSurfaceView) findViewById(R.id.glsurfaceview1);
 		progressLayout = (LinearLayout) findViewById(R.id.progressLayout1);
-
 		capture = (LinearLayout) findViewById(R.id.capture_img);
 		audio = (LinearLayout) findViewById(R.id.audio_layout);
 		definition_layout = (LinearLayout) findViewById(R.id.definition_layout);
@@ -150,7 +141,6 @@ public class PlayDeviceActivity extends BaseActivity implements PlayListener,
 		down_lt = (LinearLayout) findViewById(R.id.down_lt);
 		suff_lt = (FrameLayout) findViewById(R.id.suface_framlt);
 		audioing = (TextView) findViewById(R.id.audioing_text);
-
 		myRender = new MyRender(glSurfaceView1);
 		myRender.setListener(this);
 		glSurfaceView1.setRenderer(myRender);
@@ -479,7 +469,7 @@ public class PlayDeviceActivity extends BaseActivity implements PlayListener,
 		localButton1.setOnClickListener(new OnClickListener() {
 			public void onClick(View paramAnonymousView) {
 				closePop();
-				if (PlayDeviceActivity.this.resolution != 2) {
+				if (PlayDeviceActivity.this.resolution != 0) {
 					PlayDeviceActivity.this.resolution = 0;
 					IpcDevice.stopPlayStream(userid);
 					IpcDevice.startPlayStream(userid, resolution);
@@ -500,7 +490,7 @@ public class PlayDeviceActivity extends BaseActivity implements PlayListener,
 			public void onClick(View paramAnonymousView) {
 				closePop();
 				if (PlayDeviceActivity.this.resolution != 2) {
-					PlayDeviceActivity.this.resolution = 0;
+					PlayDeviceActivity.this.resolution = 2;
 					IpcDevice.stopPlayStream(userid);
 					IpcDevice.startPlayStream(userid, resolution);
 				}

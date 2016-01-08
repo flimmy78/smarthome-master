@@ -33,7 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:layout_weight="1"
+                android:layout_weight="1" android:maxLines="1"
                 android:hint="Camera name" android:maxEms="6"
                 android:textSize="20sp" />
         </LinearLayout>
@@ -65,7 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:layout_weight="1"
+                android:layout_weight="1" android:maxLines="1"
                 android:textSize="18sp" />
             <!-- android:text="SCAN-000500-MFFTJ" -->
         </LinearLayout>
@@ -96,7 +96,7 @@
                 android:id="@+id/device_admin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="1" android:maxLines="1"
                 android:text="admin"
                 android:textSize="20sp" />
         </LinearLayout>
@@ -127,7 +127,7 @@
                 android:id="@+id/device_psw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="1" android:maxLines="1"
                 android:textSize="20sp" />
         </LinearLayout>
 

@@ -5,7 +5,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.accloud.cloudservice.AC;
 import com.accloud.cloudservice.PayloadCallback;
@@ -103,7 +102,6 @@ public class RegisterActivity extends BaseActivity implements OnClickListener {
 		default:
 			break;
 		}
-
 	}
 
 	@Override

@@ -160,7 +160,20 @@ public class DeviceManager {
 		}
 		return false;
 	}
+	/**
+	 * 删除消息
+	 *
+	 * @param devcieId
+	 * @return
+	 */
+	public boolean DelectMsg(String devcieId) {
+		ContentValues values = new ContentValues();
 
+		int index = wirtedatabase.delete(DeviceDb.tableMsg, "device_mac=?",
+				new String[]{devcieId});
+
+		return false;
+	}
 	/**
 	 * 保存消息
 	 * 
@@ -180,6 +193,31 @@ public class DeviceManager {
 		}
 
 		return false;
+	}
+	public IpcDevice Query_DeviceID_Device(String deviceid) {
+		Cursor cursor = Readdatabase.query(DeviceDb.tableIPCName, new String[]{
+						"device_mac", "device_adminname", "device_pwd", "device_name",
+						"device_pic", "device_userid"}, "device_mac=?",
+				new String[]{deviceid}, null, null, null);
+		IpcDevice device = new IpcDevice();
+		if (cursor.moveToFirst()) {
+			String mac = cursor.getString(0);
+			String adminName = cursor.getString(1);
+			String pwd = cursor.getString(2);
+			String name = cursor.getString(3);
+			String pic = cursor.getString(4);
+			long  userid=cursor.getLong(5);
+			device.setDeviceid(mac);
+			device.setName(name);
+			device.setAdmin_name(adminName);
+			device.setPsw(pwd);
+			device.setUserid(userid);
+			device.setPic(pic);
+			return device;
+		}
+
+		return null;
+
 	}
 
 	/**

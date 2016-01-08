@@ -84,29 +84,45 @@ public class TimeTaskDeviceActivity extends BaseActivity implements
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             if (msg.what == 1) {
-                String info = (String) msg.obj;
-                type_t.setText(info);
+                type_t.setText(info_msg);
             } else if (msg.what == 3) {
-                String cycle = (String) msg.obj;
-                way.setText(cycle);
+                way.setText(cycle_msg);
 
             } else if (msg.what == 5) {
-                String ms = (String) msg.obj;
-                action_t.setText(ms);
+                action_t.setText(command_msg);
 
             } else if (msg.what == 7) {
                 String timePoint = bundle.getString("timePoint");
-                String timeCycle = bundle.getString("timeCycle");
+                String timeCycle = Getstr(bundle.getString("timeCycle"));
                 String description = bundle.getString("description");
                 text_view.setText(timePoint);
                 way.setText(timeCycle);
                 time_task_description.setText(description);
-
             }
 
 
         }
     };
+
+    public String Getstr(String str) {
+        String cycle = "";
+        if (str.equals("once")) {
+            cycle = "仅此一次";
+        } else if (str.equals("hours")) {
+            cycle = "每小时";
+        } else if (str.equals("day")) {
+            cycle = "每天";
+        } else if (str.equals("mouth")) {
+            cycle = "每月";
+        } else if (str.equals("year")) {
+            cycle = "每年";
+        } else {
+            cycle = "周计划";
+        }
+        return cycle;
+
+    }
+
 
     @Override
     protected void onDestroy() {
@@ -229,7 +245,6 @@ public class TimeTaskDeviceActivity extends BaseActivity implements
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == TYPECODE && resultCode == Activity.RESULT_OK) {
             info_msg = data.getStringExtra("infomation");
-
             handler.sendEmptyMessage(1);
         } else if (requestCode == CYCLE && resultCode == Activity.RESULT_OK) {
             cycle_msg = data.getStringExtra("timeCycle");
