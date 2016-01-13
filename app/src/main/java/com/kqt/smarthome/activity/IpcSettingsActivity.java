@@ -24,7 +24,7 @@ public class IpcSettingsActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.settings_screen);
-		setNaView(R.drawable.left_back, "", 0, "", 0, "", 0, "");
+		setNaView(R.drawable.left_back_selector, "", 0, "", 0, "", 0, "");
 		setTitle("设置页面");
 		initData();
 		initView();

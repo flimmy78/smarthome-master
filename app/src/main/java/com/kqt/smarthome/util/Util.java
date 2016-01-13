@@ -156,7 +156,19 @@ public class Util {
         return list;
 
     }
-
+    public static void deleteFile(String uri) {
+        File dirFile = new File(uri);
+        if (!dirFile.exists()) {
+            return;
+        }
+        if (dirFile.isDirectory()) {
+            String[] children = dirFile.list();
+            for (int i = 0; i < children.length; i++) {
+                new File(dirFile, children[i]).delete();
+            }
+        }
+        dirFile.delete();
+    }
     /**
      * 保存用户信息
      *

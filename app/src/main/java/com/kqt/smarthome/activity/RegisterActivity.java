@@ -29,9 +29,8 @@ public class RegisterActivity extends BaseActivity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_register);
-		setNaView(R.drawable.left_back, "", 0, "", 0, "", 0, "");
+		setNaView(R.drawable.left_back_selector, "", 0, "", 0, "", 0, "");
 		setTitle("注册界面");
-
 		initView();
 	}
 

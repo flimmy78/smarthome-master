@@ -40,7 +40,7 @@ public class UserInfomationActivity extends BaseActivity implements
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.userinfomation);
 		setTitle("个人资料");
-		setNaView(R.drawable.left_back, "", 0, "", 0, "", 0, "");
+		setNaView(R.drawable.left_back_selector, "", 0, "", 0, "", 0, "");
 		username_layout = (LinearLayout) findViewById(R.id.user_name_layout);
 		userpwd_layout = (LinearLayout) findViewById(R.id.user_pwd_layout);
 		useriphone_layout = (LinearLayout) findViewById(R.id.user_iphone_layout);

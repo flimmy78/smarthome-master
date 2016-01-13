@@ -1,9 +1,5 @@
 package com.kqt.smarthome.activity;
 
-import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,6 +13,10 @@ import com.accloud.service.ACException;
 import com.accloud.service.ACUserDevice;
 import com.kqt.smarthome.R;
 import com.kqt.smarthome.util.Config;
+
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class ModeAddActivity extends BaseActivity {
 
@@ -38,7 +38,7 @@ public class ModeAddActivity extends BaseActivity {
 		setContentView(R.layout.box_main_activity);
 		AddDeviceActivity.listAC.add(this);
 		setTitle("添加模块");
-		setNaView(R.drawable.left_back, "", 0, "", 0, "", 0, "");
+		setNaView(R.drawable.left_back_selector, "", 0, "", 0, "", 0, "");
 		gatewayDeviceId = getIntent().getLongExtra("gatewayDeviceId", 0);
 		listview = (ListView) findViewById(R.id.mode_listview);
 		 addSubDevice();

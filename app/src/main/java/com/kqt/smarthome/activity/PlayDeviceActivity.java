@@ -74,7 +74,7 @@ public class PlayDeviceActivity extends BaseActivity implements PlayListener,
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.playdevice);
-		setNaView(R.drawable.left_back, "", 0, "", 0, "", 0, "");
+		setNaView(R.drawable.left_back_selector, "", 0, "", 0, "", 0, "");
 		setTitle("实时视频");
 		BridgeService.setPlayListener(this);
 		BridgeService.setGraphicListener(this);

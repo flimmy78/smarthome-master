@@ -1,15 +1,5 @@
 package com.kqt.smarthome.activity;
 
-import hsl.p2pipcam.nativecaller.DeviceSDK;
-
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.TimeZone;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -29,6 +19,16 @@ import com.kqt.smarthome.entity.IpcDevice;
 import com.kqt.smarthome.listenner.DateListener;
 import com.kqt.smarthome.service.BridgeService;
 import com.kqt.smarthome.util.Util;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.TimeZone;
+
+import hsl.p2pipcam.nativecaller.DeviceSDK;
 
 public class SettingIpcTimeActivity extends BaseActivity implements
 		DateListener, OnClickListener {
@@ -274,7 +274,7 @@ public class SettingIpcTimeActivity extends BaseActivity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.settingtime);
-		setNaView(R.drawable.left_back, "", 0, "", 0, "完成", 0, "");
+		setNaView(R.drawable.left_back_selector, "", 0, "", 0, "", R.drawable.right_finsh_selector, "");
 		setTitle("时钟设置");
 		BridgeService.setDateListener(this);
 		initData();

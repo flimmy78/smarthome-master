@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#eee"
-    android:orientation="vertical" >
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#eee"
+              android:orientation="vertical">
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="#f19149" >
+        android:layout_height="45dp"
+        android:background="#f19149">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/device_activity_titlename"
-            android:textColor="@color/back" >
+            android:textColor="@color/back">
         </TextView>
 
         <ImageButton
@@ -24,7 +24,7 @@
             android:layout_height="30dp"
             android:layout_gravity="right|center_vertical"
             android:layout_marginRight="5dp"
-            android:background="@drawable/add_device_selector" >
+            android:background="@drawable/right_add_selector">
         </ImageButton>
 
         <ImageButton
@@ -32,7 +32,8 @@
             android:layout_height="30dp"
             android:layout_gravity="left|center_vertical"
             android:layout_marginLeft="8dp"
-            android:background="@drawable/main_title_seting_selector" >
+            android:background="@drawable/main_title_seting_selector"
+            android:visibility="gone">
         </ImageButton>
     </FrameLayout>
 
@@ -40,13 +41,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#eee"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="5dp"
             android:layout_marginTop="10dp"
-            android:background="@color/white" >
+            android:background="@color/white">
         </LinearLayout>
 
         <LinearLayout
@@ -54,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:paddingLeft="3dp "
-            android:paddingRight="3dp" >
+            android:paddingRight="3dp">
 
             <LinearLayout
                 android:id="@+id/ipc_mannery"
@@ -66,13 +67,13 @@
                 android:paddingBottom="10dp"
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
-                android:paddingTop="10dp" >
+                android:paddingTop="10dp">
 
                 <ImageView
                     android:id="@+id/type_device_img"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:src="@drawable/ipc_camer" />
+                    android:src="@drawable/ipc_camer"/>
 
                 <TextView
                     android:id="@+id/type_device_name"
@@ -81,19 +82,19 @@
                     android:layout_marginLeft="20dp"
                     android:text="智能摄像头"
                     android:textColor="@color/white"
-                    android:textSize="17sp" />
+                    android:textSize="17sp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="right|center_vertical"
                     android:orientation="vertical"
-                    android:paddingRight="5dp" >
+                    android:paddingRight="5dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/common_item_anchor_selector" />
+                        android:src="@drawable/common_item_anchor_selector"/>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
@@ -102,7 +103,7 @@
             android:layout_width="match_parent"
             android:layout_height="5dp"
             android:layout_marginTop="10dp"
-            android:background="@color/white" >
+            android:background="@color/white">
         </LinearLayout>
 
         <FrameLayout
@@ -110,7 +111,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
             android:paddingLeft="5dp"
-            android:paddingRight="5dp" >
+            android:paddingRight="5dp">
 
             <LinearLayout
                 android:id="@+id/body_msg"
@@ -119,13 +120,13 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:visibility="gone" >
+                android:visibility="gone">
 
                 <ImageButton
                     android:id="@+id/device_nodata_add_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/nodevice" />
+                    android:background="@drawable/nodevice"/>
             </LinearLayout>
 
             <com.kqt.smarthome.view.XListView
@@ -136,14 +137,14 @@
                 android:cacheColorHint="#00000000"
                 android:divider="#00000000"
                 android:dividerHeight="10dp"
-                android:listSelector="@android:color/transparent" >
+                android:listSelector="@android:color/transparent">
             </com.kqt.smarthome.view.XListView>
 
             <ProgressBar
                 android:id="@+id/loading"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center" />
+                android:layout_gravity="center"/>
 
             <TextView
                 android:id="@+id/timeout_text"
@@ -151,7 +152,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="@string/timeout"
-                android:visibility="gone" />
+                android:visibility="gone"/>
         </FrameLayout>
     </LinearLayout>
 

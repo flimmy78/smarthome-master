@@ -7,6 +7,16 @@ public class AlarmMsg {
 	private String mac;
 	private String msg;
 	private String filepath;
+	private boolean ischeck;    //是否选中
+
+	public boolean ischeck() {
+		return ischeck;
+	}
+
+	public void setIscheck(boolean ischeck) {
+		this.ischeck = ischeck;
+	}
+
 	public String getFilepath() {
 		return filepath;
 	}

@@ -51,7 +51,7 @@ public class TimeTaskDeviceActivity extends BaseActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.time_task_acitivity);
         setTitle("定时任务");
-        setNaView(R.drawable.left_back, "", 0, "", 0, "", R.drawable.right_finsh_selector, "");
+        setNaView(R.drawable.left_back_selector, "", 0, "", 0, "", R.drawable.right_finsh_selector, "");
         timetask_layout = (FrameLayout) findViewById(R.id.timetask_layout);
         type = (FrameLayout) findViewById(R.id.time_type_layout);
         aciton = (FrameLayout) findViewById(R.id.time_action_layout);

@@ -93,7 +93,7 @@ public class IpcAddDeviceActivity extends BaseActivity implements
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_ipc);
-        setNaView(R.drawable.left_back, "", 0, "", 0, "", 0, "完成");
+        setNaView(R.drawable.left_back_selector, "", 0, "", 0, "", R.drawable.right_finsh_selector, "");
         setTitle("设备添加");
         BridgeService.setSearchListener(this);
         DeviceSDK.initSearchDevice();

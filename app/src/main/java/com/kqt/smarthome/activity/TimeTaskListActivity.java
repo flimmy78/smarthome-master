@@ -41,7 +41,7 @@ public class TimeTaskListActivity extends BaseActivity implements XListView.IXLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.timetask_list);
         setTitle(getString(R.string.time_task_list_title));
-        setNaView(R.drawable.left_back, "", 0, "", 0, "", 0, "添加");
+        setNaView(R.drawable.left_back_selector, "", 0, "", 0, "", R.drawable.right_add_selector, "");
         listview = (XListView) findViewById(R.id.time_task_list_listview);
         adpter = new TimeTaskListAdpter(timerTasks, this);
         listview.setPullLoadEnable(false);

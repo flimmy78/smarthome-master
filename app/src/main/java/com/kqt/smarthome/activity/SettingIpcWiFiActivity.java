@@ -1,16 +1,5 @@
 package com.kqt.smarthome.activity;
 
-import hsl.p2pipcam.nativecaller.DeviceSDK;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
@@ -44,6 +33,17 @@ import com.kqt.smarthome.util.Util;
 import com.kqt.smarthome.view.CustomDialog;
 import com.kqt.smarthome.view.CustomListView;
 import com.kqt.smarthome.view.LoadingDialog;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+import hsl.p2pipcam.nativecaller.DeviceSDK;
 
 public class SettingIpcWiFiActivity extends BaseActivity implements
 		WiFiListener, OnClickListener, IpcWiFiListListener {
@@ -117,7 +117,7 @@ public class SettingIpcWiFiActivity extends BaseActivity implements
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.settingwifi);
-		setNaView(R.drawable.left_back, "", 0, "", 0, "完成", 0, "");
+		setNaView(R.drawable.left_back_selector, "", 0, "", 0, "", R.drawable.right_finsh_selector, "");
 		setTitle("WIFI设置");
 		showProgressDialog("加载..");
 		BridgeService.setWifiListener(this);

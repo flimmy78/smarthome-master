@@ -53,7 +53,7 @@ public class Box_main_switchActivity extends BaseActivity {
 		setContentView(R.layout.box_main_switch_activity);
 		AddDeviceActivity.listAC.add(this);
 		setTitle("总路列表");
-		setNaView(R.drawable.left_back, "", 0, "", 0, "", 0, "");
+		setNaView(R.drawable.left_back_selector, "", 0, "", 0, "", 0, "");
 		expandableListView = (ExpandableListView) findViewById(R.id.main_expandablelistview);
         expandableListAdapter_1 = new ExpandableListViewAdapter_1(list, this);
 		expandableListView.setGroupIndicator(null);

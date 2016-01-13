@@ -131,7 +131,7 @@ public class TimeTaskSettingCycleActivity extends BaseActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.time_task_setting_cycle);
         setTitle("定时任务");
-        setNaView(R.drawable.left_back, "", 0, "", 0, "", R.drawable.right_finsh_selector, "");
+        setNaView(R.drawable.left_back_selector, "", 0, "", 0, "", R.drawable.right_finsh_selector, "");
         assignViews();
         initData();
         handler.sendEmptyMessage(0);

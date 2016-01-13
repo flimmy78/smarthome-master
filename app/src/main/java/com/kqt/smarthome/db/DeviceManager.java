@@ -1,19 +1,18 @@
 package com.kqt.smarthome.db;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.kqt.smarthome.entity.AlarmMsg;
-import com.kqt.smarthome.entity.Device;
-import com.kqt.smarthome.entity.IpcDevice;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteDatabase.CursorFactory;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+
+import com.kqt.smarthome.entity.AlarmMsg;
+import com.kqt.smarthome.entity.Device;
+import com.kqt.smarthome.entity.IpcDevice;
+import com.kqt.smarthome.util.Util;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DeviceManager {
 
@@ -61,6 +60,53 @@ public class DeviceManager {
 			list.add(ipcDevice);
 		}
 		return list;
+	}
+	/**
+	 * 根据msgid删除消息
+	 *
+	 * @param
+	 * @return
+	 */
+	public boolean DelectMsg_msgid(int msgid) {
+		List<AlarmMsg> list = QueryMsg_MsgId(msgid);  //查询所有的该userid下的消息
+		for (AlarmMsg msg : list) {
+			String uri = msg.getFilepath();
+			Util.deleteFile(uri);
+		}
+		int index = wirtedatabase.delete(DeviceDb.tableMsg, "msg_id=?",
+				new String[]{msgid + ""});
+		if (index > 0) {
+			return true;
+		}
+
+		return false;
+	}
+	/**
+	 * 根据msgid查询报警信息
+	 *
+	 * @param msgId
+	 * @return
+	 */
+	public List<AlarmMsg> QueryMsg_MsgId(int msgId) {
+		List<AlarmMsg> alarmMsgs = new ArrayList<AlarmMsg>();
+		Cursor cursor = Readdatabase.query(DeviceDb.tableMsg, new String[]{
+						"msg_id", "device_mac", "time", "msg", "filepath"},
+				"msg_id=?", new String[]{msgId + ""}, null, null, null);
+		while (cursor.moveToNext()) {
+			AlarmMsg alarm = new AlarmMsg();
+			int id = cursor.getInt(0);
+			String mac1 = cursor.getString(1);
+			String time = cursor.getString(2);
+			String msg = cursor.getString(3);
+			String file = cursor.getString(4);
+			alarm.setId(id);
+			alarm.setMac(mac1);
+			alarm.setTime(time);
+			alarm.setMsg(msg);
+			alarm.setFilepath(file);
+			alarmMsgs.add(alarm);
+		}
+		return alarmMsgs;
 	}
 
 	/**

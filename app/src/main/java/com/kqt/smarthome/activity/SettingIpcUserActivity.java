@@ -1,13 +1,5 @@
 package com.kqt.smarthome.activity;
 
-import hsl.p2pipcam.nativecaller.DeviceSDK;
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -21,6 +13,14 @@ import com.kqt.smarthome.listenner.UserListener;
 import com.kqt.smarthome.service.BridgeService;
 import com.kqt.smarthome.util.Util;
 import com.kqt.smarthome.view.LoadingDialog;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import hsl.p2pipcam.nativecaller.DeviceSDK;
 
 public class SettingIpcUserActivity extends BaseActivity implements
 		UserListener {
@@ -49,7 +49,7 @@ public class SettingIpcUserActivity extends BaseActivity implements
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.settinguser);
-		setNaView(R.drawable.left_back, "", 0, "", 0, "完成", 0, "");
+		setNaView(R.drawable.left_back_selector, "", 0, "", 0, "", R.drawable.right_finsh_selector, "");
 		setTitle("名称修改");
 		showProgressDialog("加载..");
 		BridgeService.setUserListener(this);

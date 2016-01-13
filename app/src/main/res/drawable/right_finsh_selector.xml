@@ -2,6 +2,6 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:drawable="@drawable/right_finsh_pressed" android:state_pressed="true"/>
-    <item android:drawable="@drawable/right_finsh_normal"/>
+    <item android:drawable="@drawable/right_finsh_noaml"/>
 
 </selector>

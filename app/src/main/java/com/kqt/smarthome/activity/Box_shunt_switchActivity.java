@@ -64,7 +64,7 @@ public class Box_shunt_switchActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.box_shunt_switch_activity);
 		setTitle("分路列表");
-		setNaView(R.drawable.left_back, "", 0, "", 0, "", 0, "");
+		setNaView(R.drawable.left_back_selector, "", 0, "", 0, "", 0, "");
 		expandableListView = (ExpandableListView) findViewById(R.id.expandablelistview);
 		timeout_tv = (TextView) findViewById(R.id.shunt_data_timeout);
 		progressBar = (ProgressBar) findViewById(R.id.refish_shunt_data);

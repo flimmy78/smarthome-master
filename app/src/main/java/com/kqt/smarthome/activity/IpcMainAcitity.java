@@ -82,8 +82,8 @@ public class IpcMainAcitity extends BaseActivity implements
         setContentView(R.layout.activity_ipc_main);
         BridgeService.setDeviceStatusListener(this);
         BridgeService.setPictureListener(this);
-        setNaView(R.drawable.left_back, "", 0, "", 0, "",
-                R.drawable.right_add_select, "");
+        setNaView(R.drawable.left_back_selector, "", 0, "", 0, "",
+                R.drawable.right_add_selector, "");
         setTitle("摄像头列表");
         listView = (ListView) findViewById(R.id.device_ipc_listview);
         textView = (TextView) findViewById(R.id.ipc_main_text);

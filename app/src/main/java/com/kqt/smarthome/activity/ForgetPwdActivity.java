@@ -44,7 +44,7 @@ public class ForgetPwdActivity extends BaseActivity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.forgetpwd);
 		setTitle("账号验证");
-		setNaView(R.drawable.left_back, "", 0, "", 0, "", 0, "");
+		setNaView(R.drawable.left_back_selector, "", 0, "", 0, "", 0, "");
 		code = (EditText) findViewById(R.id.idencode);
 		newpwd = (EditText) findViewById(R.id.newpwd);
 		iphone = (EditText) findViewById(R.id.forget_phone);

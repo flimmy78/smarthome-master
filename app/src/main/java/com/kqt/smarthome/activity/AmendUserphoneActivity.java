@@ -36,7 +36,7 @@ public class AmendUserphoneActivity extends BaseActivity implements
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.amendphone_activity);
 		setTitle("手机号修改");
-		setNaView(R.drawable.left_back, "", 0, "", 0, "", 0, "完成");
+		setNaView(R.drawable.left_back_selector, "", 0, "", 0, "", 0, "完成");
 		phone = (EditText) findViewById(R.id.amend_newphone);
 		pwd = (EditText) findViewById(R.id.amend_pwd);
 		code = (EditText) findViewById(R.id.amend_code);

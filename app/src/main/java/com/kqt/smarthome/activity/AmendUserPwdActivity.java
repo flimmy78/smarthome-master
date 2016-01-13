@@ -30,7 +30,7 @@ public class AmendUserPwdActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.amendpwd_activity);
 		setTitle("密码修改");
-		setNaView(R.drawable.left_back, "", 0, "", 0, "", 0, "完成");
+		setNaView(R.drawable.left_back_selector, "", 0, "", 0, "", 0, "完成");
 		opwd = (EditText) findViewById(R.id.amend_oldpwd);
 		npwd = (EditText) findViewById(R.id.amend_newpwd);
 	}

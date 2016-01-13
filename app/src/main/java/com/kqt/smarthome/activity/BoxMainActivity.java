@@ -1,32 +1,22 @@
 package com.kqt.smarthome.activity;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.json.JSONArray;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 
-import com.accloud.cloudservice.PayloadCallback;
-import com.accloud.service.ACException;
-import com.accloud.service.ACMsg;
-import com.accloud.service.ACObject;
 import com.kqt.smarthome.R;
 import com.kqt.smarthome.adpter.BoxModeAdpter;
 import com.kqt.smarthome.entity.BoxDevice;
-import com.kqt.smarthome.entity.BoxManager;
 import com.kqt.smarthome.entity.BoxMode;
 import com.kqt.smarthome.entity.Device;
 import com.kqt.smarthome.util.Config;
 import com.kqt.smarthome.util.Util;
 import com.kqt.smarthome.view.XListView;
 import com.kqt.smarthome.view.XListView.IXListViewListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class BoxMainActivity extends BaseActivity implements IXListViewListener {
 
@@ -95,8 +85,8 @@ public class BoxMainActivity extends BaseActivity implements IXListViewListener 
 		// this.showProgressDialog("");
 		device = (Device) getIntent().getSerializableExtra("device");
 		setTitle("功能类型");
-		setNaView(R.drawable.left_back, "", 0, "", 0, "",
-				R.drawable.right_add_select, "");
+		setNaView(R.drawable.left_back_selector, "", 0, "", 0, "",
+				R.drawable.right_add_selector, "");
 		device = (Device) getIntent().getSerializableExtra("device");
 		listview = (XListView) findViewById(R.id.mode_listview);
 		listview.setPullLoadEnable(false);

@@ -60,7 +60,7 @@ public class SettingBoxShareActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.box_sharp_activity);
 		device = BoxSettingActivity.device;
-		setNaView(R.drawable.left_back, "", 0, "", 0, "刷新", 0, "");
+		setNaView(R.drawable.left_back_selector, "", 0, "", 0, "刷新", 0, "");
 		setTitle("设备分享");
 		dialog = new LoadingDialog(this);
 		box_sharp_code_img = (ImageView) findViewById(R.id.box_sharp_code_img);

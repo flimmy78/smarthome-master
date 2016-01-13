@@ -19,7 +19,7 @@ public class AboutAppActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.about_acitivty);
 		setTitle("软件关于");
-		setNaView(R.drawable.left_back, "", 0, "", 0, "", 0, "");
+		setNaView(R.drawable.left_back_selector, "", 0, "", 0, "", 0, "");
 		version = (TextView) findViewById(R.id.app_version);
 
 		try {

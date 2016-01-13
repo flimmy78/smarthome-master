@@ -1,16 +1,11 @@
 package com.kqt.smarthome.activity;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.accloud.cloudservice.AC;
 import com.accloud.cloudservice.ACDeviceActivator;
@@ -19,6 +14,8 @@ import com.accloud.service.ACDeviceBind;
 import com.accloud.service.ACException;
 import com.accloud.utils.PreferencesUtils;
 import com.kqt.smarthome.R;
+
+import java.util.List;
 
 public class BoxDeviceAddActivity extends BaseActivity implements
 		OnClickListener {
@@ -40,7 +37,7 @@ public class BoxDeviceAddActivity extends BaseActivity implements
 		setContentView(R.layout.box_device_active);
 		AddDeviceActivity.listAC.add(this);
 		setTitle("第一步");
-		setNaView(R.drawable.left_back, "", 0, "", 0, "", 0, "");
+		setNaView(R.drawable.left_back_selector, "", 0, "", 0, "", 0, "");
 		deviceActivator = AC.deviceActivator(AC.DEVICE_HF);
 		ssid = deviceActivator.getSSID();
 		initView();

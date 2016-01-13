@@ -1,21 +1,11 @@
 package com.kqt.smarthome.fragment;
 
-import org.w3c.dom.Text;
-
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.Resources;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.view.ViewPager;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -26,6 +16,7 @@ import com.accloud.cloudservice.AC;
 import com.accloud.service.ACUserInfo;
 import com.kqt.smarthome.R;
 import com.kqt.smarthome.activity.AboutAppActivity;
+import com.kqt.smarthome.activity.BoxHomeActivity;
 import com.kqt.smarthome.activity.LoginActivity;
 import com.kqt.smarthome.activity.UserInfomationActivity;
 import com.kqt.smarthome.util.Ttoast;
@@ -33,13 +24,6 @@ import com.kqt.smarthome.util.Util;
 import com.kqt.smarthome.view.CustomDialog;
 import com.kqt.smarthome.view.LoadingDialog;
 import com.shizhefei.fragment.LazyFragment;
-import com.shizhefei.view.indicator.Indicator;
-import com.shizhefei.view.indicator.IndicatorViewPager;
-import com.shizhefei.view.indicator.IndicatorViewPager.IndicatorFragmentPagerAdapter;
-import com.shizhefei.view.indicator.slidebar.ColorBar;
-import com.shizhefei.view.indicator.slidebar.LayoutBar;
-import com.shizhefei.view.indicator.slidebar.ScrollBar.Gravity;
-import com.shizhefei.view.indicator.transition.OnTransitionTextListener;
 
 public class UserLayerFragment extends LazyFragment implements OnClickListener {
 	private ProgressBar loading;
@@ -47,7 +31,7 @@ public class UserLayerFragment extends LazyFragment implements OnClickListener {
 	private TextView username;
 	private Button logout;
 	private ACUserInfo acUserInfo;
-	private LinearLayout info, check, about;
+	private LinearLayout info, check, about,group;
 	private LoadingDialog dialog;
 	private Handler handler = new Handler() {
 
@@ -93,11 +77,13 @@ public class UserLayerFragment extends LazyFragment implements OnClickListener {
 		info = (LinearLayout) findViewById(R.id.amend_info_layout);
 		check = (LinearLayout) findViewById(R.id.check_app);
 		about = (LinearLayout) findViewById(R.id.about_app);
+		group = (LinearLayout) findViewById(R.id.device_group_setting);
 		dialog = new LoadingDialog(UserLayerFragment.this.getActivity());
 		info.setOnClickListener(this);
 		about.setOnClickListener(this);
 		check.setOnClickListener(this);
 		logout.setOnClickListener(this);
+		group.setOnClickListener(this);
 
 	}
 
@@ -149,6 +135,10 @@ public class UserLayerFragment extends LazyFragment implements OnClickListener {
 		} else if (id == about.getId()) {
 			Intent intent = new Intent(UserLayerFragment.this.getActivity(),
 					AboutAppActivity.class);
+			startActivity(intent);
+		} else if (id == group.getId()) {
+			Intent intent = new Intent(UserLayerFragment.this.getActivity(),
+					BoxHomeActivity.class);
 			startActivity(intent);
 		}
 	}

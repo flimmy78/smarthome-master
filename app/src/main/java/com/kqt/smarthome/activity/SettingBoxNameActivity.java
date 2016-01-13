@@ -1,12 +1,5 @@
 package com.kqt.smarthome.activity;
 
-import hsl.p2pipcam.nativecaller.DeviceSDK;
-
-import java.util.List;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -18,11 +11,7 @@ import com.accloud.cloudservice.VoidCallback;
 import com.accloud.service.ACException;
 import com.kqt.smarthome.R;
 import com.kqt.smarthome.entity.Device;
-import com.kqt.smarthome.entity.IpcDevice;
-import com.kqt.smarthome.listenner.NameListener;
-import com.kqt.smarthome.service.BridgeService;
 import com.kqt.smarthome.util.Config;
-import com.kqt.smarthome.util.Util;
 import com.kqt.smarthome.view.LoadingDialog;
 
 public class SettingBoxNameActivity extends BaseActivity {
@@ -59,7 +48,7 @@ public class SettingBoxNameActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.settingname);
 		device = BoxSettingActivity.device;
-		setNaView(R.drawable.left_back, "", 0, "上页", 0, "完成", 0, "");
+		setNaView(R.drawable.left_back_selector, "", 0, "", 0, "",R.drawable.right_finsh_selector, "");
 		setTitle("名称修改");
 		dialog = new LoadingDialog(this);
 		text = (EditText) findViewById(R.id.setting_name);

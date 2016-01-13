@@ -56,7 +56,7 @@ public class TimeTaskSettingTypeActivity extends BaseActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.timetask_setting_type);
         setTitle("设备选择");
-        setNaView(R.drawable.left_back, "", 0, "", 0, "", R.drawable.right_finsh_selector, "");
+        setNaView(R.drawable.left_back_selector, "", 0, "", 0, "", R.drawable.right_finsh_selector, "");
         lb = (FrameLayout) findViewById(R.id.timetask_lb_layout);
         fl = (FrameLayout) findViewById(R.id.timetask_fl_layout);
         lc = (LinearLayout) findViewById(R.id.timetask_lb_ischose);

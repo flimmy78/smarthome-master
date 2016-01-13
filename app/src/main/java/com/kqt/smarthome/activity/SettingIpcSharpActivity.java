@@ -54,7 +54,7 @@ public class SettingIpcSharpActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.box_sharp_activity);
         device = BoxSettingActivity.device;
-        setNaView(R.drawable.left_back, "", 0, "", 0, "", 0, "");
+        setNaView(R.drawable.left_back_selector, "", 0, "", 0, "", R.drawable.right_finsh_selector, "");
         setTitle("设备分享");
         box_sharp_code_img = (ImageView) findViewById(R.id.box_sharp_code_img);
         error = (LinearLayout) findViewById(R.id.error_layout);

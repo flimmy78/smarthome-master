@@ -37,7 +37,7 @@ public class SettingOverturnActivity extends BaseActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settingoverturn);
-        setNaView(R.drawable.left_back, "", 0, "", 0, "", 0, "");
+        setNaView(R.drawable.left_back_selector, "", 0, "", 0, "", 0, "");
         setTitle("图像方向");
         initData();
         assignViews();

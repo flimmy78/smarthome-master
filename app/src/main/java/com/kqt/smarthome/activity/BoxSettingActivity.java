@@ -1,8 +1,5 @@
 package com.kqt.smarthome.activity;
 
-import java.util.HashMap;
-import java.util.List;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
@@ -13,7 +10,9 @@ import com.kqt.smarthome.adpter.BoxSettingAdpter;
 import com.kqt.smarthome.entity.Device;
 import com.kqt.smarthome.util.Config;
 import com.kqt.smarthome.util.Util;
-import com.kqt.smarthome.view.LoadingDialog;
+
+import java.util.HashMap;
+import java.util.List;
 
 public class BoxSettingActivity extends BaseActivity {
 	private ListView listview;
@@ -26,7 +25,7 @@ public class BoxSettingActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.settings_screen);
-		setNaView(R.drawable.left_back, "", 0, "", 0, "", 0, "");
+		setNaView(R.drawable.left_back_selector, "", 0, "", 0, "", 0, "");
 		setTitle("电箱设置");
 		initData();
 		initView();

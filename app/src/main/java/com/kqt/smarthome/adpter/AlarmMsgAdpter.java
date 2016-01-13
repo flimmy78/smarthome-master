@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import com.kqt.smarthome.R;
@@ -29,6 +31,15 @@ import java.util.List;
 public class AlarmMsgAdpter extends BaseAdapter {
     private Context context;
     private List<AlarmMsg> list;
+    private boolean isvisb;   //是否显示
+
+    public boolean isvisb() {
+        return isvisb;
+    }
+
+    public void setIsvisb(boolean isvisb) {
+        this.isvisb = isvisb;
+    }
 
     public AlarmMsgAdpter(List<AlarmMsg> list, Context context) {
         this.list = list;
@@ -55,7 +66,7 @@ public class AlarmMsgAdpter extends BaseAdapter {
 
     @SuppressLint("NewApi")
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         final Viewholder viewholder;
         if (convertView == null) {
             viewholder = new Viewholder();
@@ -68,6 +79,8 @@ public class AlarmMsgAdpter extends BaseAdapter {
             viewholder.msg = (TextView) convertView.findViewById(R.id.alarmmsg);
             viewholder.file = (TextView) convertView
                     .findViewById(R.id.alarmfile);
+            viewholder.checkBox = (CheckBox) convertView
+                    .findViewById(R.id.msg_item_check);
 
             convertView.setTag(viewholder);
         } else
@@ -75,7 +88,9 @@ public class AlarmMsgAdpter extends BaseAdapter {
 
         final AlarmMsg manager = list.get(position);
         final String path = manager.getFilepath();
-        if (manager.getMsg().equals(Config.CUP_IMGTYPE)||manager.getMsg().contains("警报")) {
+        viewholder.checkBox.setVisibility(isvisb ? View.VISIBLE : View.GONE);
+        viewholder.checkBox.setChecked(manager.ischeck());
+        if (manager.getMsg().equals(Config.CUP_IMGTYPE) || manager.getMsg().contains("警报")) {
             Bitmap bitmap = null;
             try {
                 bitmap = BitmapFactory.decodeStream(new FileInputStream(path));
@@ -99,14 +114,20 @@ public class AlarmMsgAdpter extends BaseAdapter {
 
             @Override
             public void onClick(View v) {
-                if (manager.getMsg().equals(Config.CUP_IMGTYPE)||manager.getMsg().contains("警报")) {
+                if (manager.getMsg().equals(Config.CUP_IMGTYPE) || manager.getMsg().contains("警报")) {
                     openFile(path, 1);
                 } else if (manager.getMsg().equals(Config.VIDE_TYPE)) {
                     openFile(path, 2);
                 }
             }
         });
-
+        viewholder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                manager.setIscheck(isChecked);
+                list.set(position, manager);
+            }
+        });
         return convertView;
 
     }
@@ -139,5 +160,6 @@ public class AlarmMsgAdpter extends BaseAdapter {
 
     class Viewholder {
         TextView dname, time, msg, file;
+        CheckBox checkBox;
     }
 }

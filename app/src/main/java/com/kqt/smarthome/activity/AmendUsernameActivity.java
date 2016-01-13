@@ -33,7 +33,7 @@ public class AmendUsernameActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.amendname_activity);
 		setTitle("名称修改");
-		setNaView(R.drawable.left_back, "", 0, "", 0, "", 0, "完成");
+		setNaView(R.drawable.left_back_selector, "", 0, "", 0, "", 0, "完成");
 		name_input = (EditText) findViewById(R.id.username_input);
 		info = Util.GetUser(this);
 		if (info != null)

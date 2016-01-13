@@ -1,58 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#eee"
-    android:orientation="vertical" >
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#eee"
+              android:orientation="vertical">
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="#f19149" >
+        android:layout_height="45dp"
+        android:background="#f19149">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/user_activity_titlename"
-            android:textColor="@color/back" >
+            android:textColor="@color/back">
         </TextView>
     </FrameLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:id="@+id/body_msg"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:background="#F5DFB2"
-                android:gravity="center" >
+                android:gravity="center">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:orientation="vertical" >
+                    android:orientation="vertical">
 
                     <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:src="@drawable/user_not_logged_pressed" />
+                        android:src="@drawable/user_not_logged_pressed"/>
 
                     <TextView
                         android:id="@+id/user_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp" android:text="- - -"
-                        android:textColor="@color/back" />
+                        android:layout_marginTop="5dp"
+                        android:text="- - -"
+                        android:textColor="@color/back"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -64,26 +65,57 @@
                 android:background="@drawable/add_device_item_bg"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="10dp" >
+                android:padding="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:text="资料修改"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="right" >
+                    android:gravity="right">
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
                         android:layout_marginLeft="5dp"
-                        android:src="@drawable/index_arrow" />
+                        android:src="@drawable/index_arrow"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/device_group_setting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/add_device_item_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="设备分组"
+                    android:textColor="#000000"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginLeft="5dp"
+                        android:src="@drawable/index_arrow"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -95,26 +127,26 @@
                 android:background="@drawable/add_device_item_bg"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="10dp" >
+                android:padding="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:text="软件关于"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="right" >
+                    android:gravity="right">
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
                         android:layout_marginLeft="5dp"
-                        android:src="@drawable/index_arrow" />
+                        android:src="@drawable/index_arrow"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -126,26 +158,26 @@
                 android:background="@drawable/add_device_item_bg"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="10dp" >
+                android:padding="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:text="检查更新"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="right" >
+                    android:gravity="right">
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
                         android:layout_marginLeft="5dp"
-                        android:src="@drawable/index_arrow" />
+                        android:src="@drawable/index_arrow"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -156,7 +188,7 @@
                 android:paddingBottom="10dp"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
-                android:paddingTop="10dp" >
+                android:paddingTop="10dp">
 
                 <Button
                     android:id="@+id/logout_btn"
@@ -164,7 +196,7 @@
                     android:layout_height="40dp"
                     android:layout_gravity="bottom"
                     android:background="@drawable/logout_btn_selector"
-                    android:text="退出登录" />
+                    android:text="退出登录"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -173,7 +205,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:visibility="gone" />
+            android:visibility="gone"/>
     </FrameLayout>
 
 </LinearLayout>
